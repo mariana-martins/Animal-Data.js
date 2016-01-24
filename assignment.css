@@ -1,0 +1,36 @@
+/* put your css code here */
+
+
+.btn-species{
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+}
+
+.navbar-default .navbar-brand{
+    color: #f0ad4e;
+    font-size: 1.5em;
+}
+
+
+h1{
+    color: #f0ad4e;
+    text-align: center;
+}
+
+p{
+    font-size: 1.5em;
+    color: #5e5e5e;
+    text-align: center;
+    padding: 2%;
+}
+
+.img-animals{
+    margin-top: 5%;
+}
+
+.breadcrumb a {
+    cursor: pointer;
+}

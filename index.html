@@ -1,0 +1,96 @@
+<!-- This is a first example of using a template -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About Animals</title>
+<!-- include our libraries and css files -->
+
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/handlebars-v3.0.3.js"></script>
+
+<script src="js/bootstrap.min.js"></script>
+<script src="AnimalsData.js"></script>
+<script src="assignment.js"></script>
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="assignment.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- put your HTML here -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">About Animals</a>
+            </div>
+        </div><!-- /.container-fluid -->
+    </nav>
+    <main>
+        <div id="content" class="container-fluid" role="main">
+        </div>
+    </main>
+    <script id="breadcrumb-template" type="text/x-handlebars-template">
+        <div class="row">
+            <ol class="breadcrumb">
+                <li><a href="index.html">Animals Categories</a></li>
+                {{#if current_category}}
+                <li><a onclick="onclick_breadcrumbs()">{{current_category.name}}</a></li>
+                {{/if}}
+                {{#if details}}
+                <li><a>{{details.name}}</a></li>
+                {{/if}}
+            </ol>
+        </div>
+    </script>
+    <script id="categories-template" type="text/x-handlebars-template">
+        <div class="row">
+            <h1>Animals Categories</h1>
+        </div>
+        <div class="row">
+            {{#each category}}
+            <div class="col-xs-12 col-md-6 col-lg-4">
+                <a class="btn btn-warning btn-species" onclick="onclick_category({{@index}})" role="button">{{name}}</a>
+            </div>
+            {{/each}}
+        </div>
+    </script>
+    <script id="animals-template" type="text/x-handlebars-template">
+        <div class="row">
+            <h1>{{name}}</h1>
+        </div>
+        <div class="row">
+            {{#each animals}}
+            <div class="col-xs-12 col-md-6 col-lg-3">
+                <a class="btn btn-warning btn-species" onclick="onclick_animal({{@index}})" role="button">{{name}}</a>
+                <img class=" img-rounded img-responsive" src="{{image2}}">
+            </div>
+            {{/each}}
+        </div>
+    </script>
+    <script id="detail-template" type="text/x-handlebars-template">
+        <div class="row">
+            <h1>{{name}}</h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <img class="img-responsive img-detail img-rounded" src="{{image1}}">
+            </div>
+            <div class="col-lg-3">
+                <img class="img-responsive img-rounded img-animals" src="{{image2}}">
+            </div>
+            <div class="col-lg-6">
+                <p>{{description}}</p>
+            </div>
+        </div>
+    </script>
+</body>
